@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import SearchBar from "../Components/SearchBar";
 import CoinList from "../Components/CoinList";
 import Layout from "../Components/Layout"
+import styles from "./index.module.css";
 
 export default function Home({filteredCoins}) {
 
@@ -17,7 +18,7 @@ export default function Home({filteredCoins}) {
     }
     return (
         <Layout>
-            <div className='coin_app'>
+            <div className={styles.coin_app}>
                 <SearchBar type='text' placeholder="Поиск"
                 onChange={handleChange}/>
                 <CoinList filteredCoins={allCoins}/>
