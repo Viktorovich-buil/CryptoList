@@ -1,5 +1,7 @@
 import Layout from "../../Components/Layout";
-import styles from './Coin.module.css'
+import styles from './Coin.module.css';
+import Image from "next/image";
+import React from "react";
 
 
 const Coin = ({ coin }) => {
@@ -7,8 +9,11 @@ const Coin = ({ coin }) => {
         <Layout>
             <div className={styles.coin_page}>
                 <div className={styles.coin_container}>
-                    <img src={coin.image.large} alt={coin.name}
-                         className={styles.coin_image}/>
+                    {/*<img src={coin.image.large} alt={coin.name}*/}
+                    {/*     className={styles.coin_image}/>*/}
+
+                    <Image src={coin.image.large} alt={coin.name} width='350%' height='350%'/>
+
                     <h1 className={styles.coin_name}>{coin.name}</h1>
                     <p className={styles.coin_ticker}>{coin.symbol}</p>
                     <p className={styles.coin_current}>{coin.market_data.current_price.rub.toLocaleString()} </p>
